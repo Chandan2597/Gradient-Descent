@@ -16,9 +16,9 @@
 
 ![image](https://github.com/user-attachments/assets/83444749-b527-445e-9f62-306b68825542)
 
-### The diagram above formally shows a single step of the gradient descent algorithm from $x_{1}$ to $x_{2}$ To determine $x_{2}$ we take a step to the right of $x_{1}$ that is proportional to $f'(x_{1}).$ Mathematically speaking, the sign of $f'(x_{1})$ indicates the direction of the steepest ascent at $x_{1}$ (magnitude of $f'(x_{1})$ is measure of steepness), but since we want to descend (its called gradient $\textbf{descent}$) we use $-f'(x_{1}).$ Gradient descent relies on a parameter $\lambda$ called the learning rate, let us talk about this more. <br>
+### The diagram above formally shows a single step of the gradient descent algorithm from $x_{1}$ to $x_{2}$ To determine $x_{2}$ we take a step to the right of $x_{1}$ that is proportional to $f'(x_{1}).$ Mathematically speaking, the sign of $f'(x_{1})$ indicates the direction of the steepest ascent at $x_{1}$ (magnitude of $f'(x_{1})$ is measure of steepness), but since we want to descend (its called gradient $\textbf{descent}$) we use $-f'(x_{1}).$ Gradient descent relies on a parameter $\lambda$ called the learning rate<br>
 
-### <b>Thinking about the learning rate </b>
+### <b>Learning rate </b>
 
 ### The learning rate $\lambda$ and the steepest descent $-f'(x_{1})$ together determine the step size towards the minimum. Hence the learning rate determines the size of the steps. If $\lambda$ is large then we will take large steps down towards to the minimum. Similarly if $\lambda$ is small it will take longer to converge towards the minimum as the step size is smaller. Does this mean we should pick a really large $\lambda$ to coverge fast towards $x^*?$ No, this is not a good idea. $\lambda$ too large or too small can cause covergence problems as illustrated by the diagram below.<br>
 ![image](https://github.com/user-attachments/assets/b7beb0c5-8034-4ebd-8833-ad0911a0b6a3)
