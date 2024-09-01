@@ -24,4 +24,34 @@
 ![image](https://github.com/user-attachments/assets/b7beb0c5-8034-4ebd-8833-ad0911a0b6a3)
 
 
+## <b><u>Gradient descent algorithm </u></b>
 
+### <b>Single variable</b>
+
+### Suppose we have a single variable and differentiable function $f(x).$ Given a initial value $x_{1}$ the gradient descent describes the steps required to coverge towards a local minimum $x^*$ such that $f'(x^*) = 0.$ In the above section we determined that $x_{2} = x_{1} - \lambda f'(x_{1}),$ where $\lambda$ is the learning rate parameter. This formula can be generalized to $$x_{t+1} = x_{t} - \lambda f'(x_{t}),$$ for iteration $t.$ Given initial value $x_{1}$ and large number of iterations $T,$ this algorithm will generate $x_{1}, x_{2}, \ldots, x_{T},$ where $x_{T} \approx x^*.$ That is $x_{t+1}$ converges towards $x^*$ as $t$ gets very large. Notice that at convergence $f'(x_{t}) \approx 0$ and hence $|x_{t+1} - x_{t}| \approx 0.$ Therefore a common stopping criteria for gradient descent is to iterate until $|x_{t+1} - x_{t}|$ is a very small number. For example we can keep iterating gradient descent until $|x_{t+1} - x_{t}| < 0.001.$
+
+### <b>Multiple variables</b>
+### Consider a multiple variable and differentiable function $f(x_{1},x_{2},\ldots, x_{n}).$ Our goal is to apply gradient descent and find a minimum $(x_{1}^{*}, x_{2}^{*}, \ldots, x_{n}^{*}).$ This function has partial derivatives stored in the gradient vector $(\frac{df(x)}{dx_{1}}, \ldots, \frac{df(x)}{dx_{n}}).$ The direction of the gradient vector indicates direction of steepest ascent, and the length of the gradient vector is a mesuare of the steepness. We can easily generalize the gradient descent to multiple variables as follows:
+
+
+$$
+\begin{bmatrix}
+    x_{1}^{t+1} \\ 
+    \vdots \\
+    x_{n}^{t+1}
+\end{bmatrix}
+=
+\begin{bmatrix}
+    x_{1}^{t} \\ 
+    \vdots \\
+    x_{n}^{t}
+\end{bmatrix}
+-
+\lambda
+\begin{bmatrix}
+    \frac{df(x_{1})}{dx_{1,t}} \\ 
+    \vdots \\
+    \frac{df(x_{n})}{dx_{n,t}} \\ 
+\end{bmatrix},
+$$
+### where $t$ is the gradient descent itteration. Now the stopping criteria can depend on the euclidean distance between the now and previous itteration, that is stop if $\sqrt{(x_{1}^{t+1} - x_{1}^{t})^2 + \ldots + (x_{n}^{t+1} - x_{n}^{t})^2} < 0.001.$
